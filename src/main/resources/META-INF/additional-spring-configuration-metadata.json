@@ -1,4 +1,8 @@
 {
+  "groups": [{
+    "name": "telegram",
+    "description": "Group for Telegram properties."
+  }],
   "properties": [
     {
       "name": "telegram.url",
