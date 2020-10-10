@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: java-telegram-bot-api
+
+server:
+  port: 8069
+
+telegram:
+  token: BOT_TOKEN_HERE
+  url: https://api.telegram.org/bot${telegram.token}
