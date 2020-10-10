@@ -4,8 +4,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.vadmurzakov.javatelegrambotapi.config.properties.TelegramProperties;
 import com.github.vadmurzakov.javatelegrambotapi.config.rest.operation.RestClientOperation;
+import com.github.vadmurzakov.javatelegrambotapi.domain.dto.Chat;
 import com.github.vadmurzakov.javatelegrambotapi.domain.dto.User;
+import com.github.vadmurzakov.javatelegrambotapi.domain.request.method.GetChatRequest;
 import com.github.vadmurzakov.javatelegrambotapi.domain.response.ResponseEntity;
+import com.github.vadmurzakov.javatelegrambotapi.domain.response.method.GetChatResponse;
 import com.github.vadmurzakov.javatelegrambotapi.domain.response.method.GetMeResponse;
 import com.github.vadmurzakov.javatelegrambotapi.exception.RestWSException;
 import lombok.RequiredArgsConstructor;
@@ -25,6 +28,14 @@ public class TelegramClient implements TelegramAPI {
         GetMeResponse getMeResponse = mapper.convertValue(response, GetMeResponse.class);
         checkServerResponse(getMeResponse);
         return getMeResponse.getResult();
+    }
+
+    @Override
+    public Chat getChat(Long chatId) {
+        GetChatRequest request = new GetChatRequest(chatId);
+        JsonNode response = sendRequest(properties.getUrl() + "/getChat", request);
+        GetChatResponse getChatResponse = mapper.convertValue(response, GetChatResponse.class);
+        return getChatResponse.getResult();
     }
 
     private JsonNode sendRequest(String url, Object request) {

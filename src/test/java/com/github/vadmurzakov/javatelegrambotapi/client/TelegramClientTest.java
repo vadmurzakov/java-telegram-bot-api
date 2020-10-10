@@ -1,5 +1,6 @@
 package com.github.vadmurzakov.javatelegrambotapi.client;
 
+import com.github.vadmurzakov.javatelegrambotapi.domain.dto.Chat;
 import com.github.vadmurzakov.javatelegrambotapi.domain.dto.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,15 @@ class TelegramClientTest {
         assertFalse(user.getFirstName().isEmpty());
         assertNotNull(user.getId());
         assertNotNull(user.isBot());
+    }
+
+    @Test
+    public void getChat() {
+        Chat chat = telegramClient.getChat(1119504532L);
+        assertNotNull(chat);
+        assertNotNull(chat.getId());
+        assertNotNull(chat.getFirstName());
+        assertNotNull(chat.getUsername());
+        assertNotNull(chat.getType());
     }
 }
