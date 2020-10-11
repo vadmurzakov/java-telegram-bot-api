@@ -13,6 +13,30 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>java-telegram-bot-api</name>
     <description>Client for TelegramBot API</description>
+    <url>https://github.com/vadmurzakov/java-telegram-bot-api</url>
+
+    <developers>
+        <developer>
+            <id>owner</id>
+            <name>Murzakov Vadim</name>
+            <email>vadmurzakov@gmail.com</email>
+            <timezone>UTC+3</timezone>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <scm>
+        <url>https://github.com/vadmurzakov/java-telegram-bot-api</url>
+        <connection>scm:git:git://github.com/vadmurzakov/java-telegram-bot-api.git</connection>
+        <developerConnection>scm:git:git://github.com/vadmurzakov/java-telegram-bot-api.git</developerConnection>
+    </scm>
 
     <properties>
         <java.version>15</java.version>
